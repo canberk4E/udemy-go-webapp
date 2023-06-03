@@ -10,6 +10,7 @@ import (
 	"github.com/canberk4e/demoprogram/json_handling"
 	"github.com/canberk4e/demoprogram/pointers"
 	"github.com/canberk4e/demoprogram/structs"
+	"github.com/canberk4e/demoprogram/testing"
 	"github.com/canberk4e/demoprogram/variables_functions"
 )
 
@@ -32,4 +33,5 @@ func main() {
 	interfaces.Execute()
 	channels.Execute()
 	json_handling.Execute()
+	testing.Execute()
 }
