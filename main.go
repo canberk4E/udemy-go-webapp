@@ -1,11 +1,12 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"time"
 
-	"github.com/canberk4e/demoprogram/helpers"
+	"github.com/canberk4e/demoprogram/channels"
+	"github.com/canberk4e/demoprogram/interfaces"
+	"github.com/canberk4e/demoprogram/jsonhandling"
 )
 
 type myStruct struct {
@@ -24,64 +25,19 @@ type User struct {
 	BirthDate   time.Time
 }
 
-type Animal interface {
-	Says() string
-	NumberOfLegs() int
-}
-
-type Dog struct {
-	Name  string
-	Breed string
-}
-
-func (d *Dog) Says() string {
-	return "Woof"
-}
-
-func (d *Dog) NumberOfLegs() int {
-	return 4
-}
-
-func (g *Gorilla) Says() string {
-	return "Ugh"
-}
-
-func (g *Gorilla) NumberOfLegs() int {
-	return 2
-}
-
-type Gorilla struct {
-	Name          string
-	Color         string
-	NumberOfTeeth int
-}
-
-func PrintInfo(a Animal) {
-	fmt.Println("This animal says", a.Says(), "and has", a.NumberOfLegs(), "legs.")
-}
-
 func main() {
-	var myType helpers.SomeType
-	myType.TypeName = "TYPE"
-	myType.TypeNumber = 1
+	interfaces.Execute()
+	channels.Execute()
+	jsonhandling.Execute()
 
-	fmt.Println(myType.TypeName)
-	fmt.Println(myType.TypeNumber)
+	/* 	var myType helpers.SomeType
+	   	myType.TypeName = "TYPE"
+	   	myType.TypeNumber = 1
 
-	dog := Dog{
-		Name:  "Samson",
-		Breed: "German Shephered",
-	}
+	   	fmt.Println(myType.TypeName)
+	   	fmt.Println(myType.TypeNumber)
+	*/
 
-	PrintInfo(&dog)
-
-	gorilla := Gorilla{
-		Name:          "Jock",
-		Color:         "grey",
-		NumberOfTeeth: 32,
-	}
-
-	PrintInfo(&gorilla)
 	/*
 		var myVar myStruct
 		myVar.FirstName = "John"
