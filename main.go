@@ -1,12 +1,12 @@
 package main
 
 import (
-	"log"
 	"time"
 
 	"github.com/canberk4e/demoprogram/channels"
 	"github.com/canberk4e/demoprogram/interfaces"
 	"github.com/canberk4e/demoprogram/jsonhandling"
+	"github.com/canberk4e/demoprogram/pointers"
 )
 
 type myStruct struct {
@@ -26,6 +26,7 @@ type User struct {
 }
 
 func main() {
+	pointers.Execute()
 	interfaces.Execute()
 	channels.Execute()
 	jsonhandling.Execute()
@@ -85,12 +86,7 @@ func main() {
 
 		fmt.Println("The function returned", whatWasSaid, theOtherThing)
 
-		var colorGreen string
-		colorGreen = "Green"
 
-		log.Println("colorGreen is set to", colorGreen)
-		changeUsingPointer(&colorGreen)
-		log.Println("after func call colorGreen is set to", colorGreen)
 	*/
 }
 
@@ -100,10 +96,4 @@ func saySomething() (string, string) {
 
 func sayAnotherThing(s string) (string, string) {
 	return s, "World"
-}
-
-func changeUsingPointer(s *string) {
-	log.Println("s is set to", s)
-	newValue := "Red"
-	*s = newValue
 }
