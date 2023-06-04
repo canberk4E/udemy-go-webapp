@@ -11,6 +11,8 @@ var tests = []struct {
 }{
 	{"valid-data", 100.0, 10.0, 10.0, false},
 	{"invalid-data", 100.0, 0.0, 0.0, true},
+	{"expect-5", 50.0, 10.0, 5.0, false},
+	{"expect-fraction", -1.0, -777.0, 0.0012870013, false},
 }
 
 func TestDivision(t *testing.T) {
@@ -35,6 +37,8 @@ func TestDivision(t *testing.T) {
 	}
 }
 
+/* Not needed
+
 func TestDivide(t *testing.T) {
 	_, err := divide(10.0, 1.0)
 
@@ -50,3 +54,4 @@ func TestBadDivide(t *testing.T) {
 		t.Error("Test failed - did not get error when we should have")
 	}
 }
+*/
