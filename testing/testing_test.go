@@ -15,6 +15,7 @@ var tests = []struct {
 	{"expect-fraction", -1.0, -777.0, 0.0012870013, false},
 }
 
+// Run tests: go test -v ./...
 func TestDivision(t *testing.T) {
 
 	for _, tt := range tests {
